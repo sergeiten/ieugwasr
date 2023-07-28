@@ -42,7 +42,7 @@ get_access_token <- function()
 	} else {
 		unlink(tf)
 	}
-	a <- googleAuthR::gar_auth(email=TRUE)
+	a <- googleAuthR::gar_auth(email=TRUE, use_oob=FALSE)
 	if(! a$validate())
 	{
 		a$refresh()
